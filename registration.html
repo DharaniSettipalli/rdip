@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>RDIP Registration page</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;700&display=swap" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" type="text/css" href="app.css"> -->
+    <style type="text/css">
+    	table,th,td{
+    		border: 2px solid black;
+    		padding: 5%;
+    	}
+    </style>
+    <script>
+    function passvalue() {
+      var fname=document.getElementById("fname").value;
+      /*var lname=document.getElementById("lname").value;*/
+      var email=document.getElementById("mail").value;
+      var phone=document.getElementById("phone").value;
+      var selectedValue;
+      var rbs=document.querySelectorAll('input[name="course"]');
+      var set=0;
+      for(var rb of rbs){
+          if(rb.checked){
+            selectedValue=rb.value;
+            set=1
+            break;
+          }
+        }
+        if(set===0){
+          alert("Please select your gender!");
+
+        }
+      var cbs=document.querySelectorAll('input[name="course11"]');
+      var selectedValue1=[];
+      var set1=0;
+      for(var rb1 of cbs){
+          if(rb1.checked){
+            selectedValue1.push((rb1.value));
+            set1=1
+          }
+        }
+        if(set1===0){
+          alert("Please select atleast one reason");
+        }
+
+      var college=document.getElementById("college").value;
+
+     /*var desc=document.getElementById("description").value;
+      var py=document.getElementById("python").value;
+      var ml=document.getElementById("ml").value;
+      var wt=document.getElementById("wt").value;
+      var gt=document.getElementById("gt").value;
+      var ai=document.getElementById("ai").value;*/
+      localStorage.setItem("textvalue1",fname);
+      localStorage.setItem("textvalue2",email);
+      localStorage.setItem("textvalue3",phone)
+      localStorage.setItem("textvalue4",selectedValue);
+      localStorage.setItem("textvalue6",selectedValue1);
+      localStorage.setItem("textvalue7",college);
+      /*localStorage.setItem("textvalue7",py);
+      localStorage.setItem("textvalue8",ml);
+      localStorage.setItem("textvalue9",wt);
+      localStorage.setItem("textvalue10",gt);
+      localStorage.setItem("textvalue11",ai);*/
+      return false;
+    }
+
+  </script>
+</head>
+<body>
+	<a href="https://www.iiit.ac.in/">
+    <img src="https://www.iiit.ac.in/img/iiit-new.png" style="float: left;padding-top: 2%;" width="189" height="100">
+  </a>
+  
+
+	<a href="https://serc.iiit.ac.in/rdip" style="float: right; padding-top: 3%;text-decoration:underline;color: purple; "><b>RDIP</b></a><br><br><br><br><br>
+
+	<nav id="a" class="navbar navbar-dark navbar-expand-md py-0" style="margin-top: 2%; background: black" >
+		  <!-- <i class="fa fa-camera-retro fa-md" style="margin-right:0.9rem;"></i> -->
+          <!-- <a href="#" class="navbar-brand" style="color: white"><strong>Floral world</strong></a> -->
+          <button class="navbar-toggler" data-toggle="collapse" data-target="#navLinks" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse " id="navLinks">
+            <ul class="navbar-nav">
+              <li class="navbar-item">
+               <a href="#" class="nav-link">
+               	<!-- <i class="fa fa-home " aria-hidden="true"></i> -->
+               Home</a>
+              </li>
+              <li class="navbar-item ">
+                 <a href="registration.html" class="nav-link">
+                 <!-- <i class="fa fa-info-circle" aria-hidden="true"> --></i>
+                 Registeration form</a>
+              </li>
+             <!--  <li class="navbar-item dropdown">
+        		<a class="nav-item nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          		Personal details
+        		</a>
+        		<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" style="background-color: pink;">
+              <a href="personal_d.html">Personal detais</a>
+                    <i class="fa fa-envelope" style="margin-right: 1rem;" aria-hidden="true"> xyz@gmail.com</i>
+                    <hr>
+          			<i class="fa fa-phone" style="margin-right: 1rem;" aria-hidden="true"> 1234567890</i> -->
+        		</div> -->
+      		  </li>
+            </ul>
+          </div>
+        </nav>
+        <br><br><br>
+
+        <form style="margin-left: 8%;" action="details.html" id="a">
+      <label for="fname" style="margin-right: 5%"><b>First Name:</b><br></label>
+      <input type="text" id="fname" required>
+      <br><br>
+      <!-- <label for="lname">Last Name:<br></label>     
+      <input type="text" id="lname"> -->
+      <label for="mail" style="margin-right: 8.2%";><b>Email:</b><br></label>
+      <input type="email" id="mail" required>
+      <br><br>
+      <label for="phone" style="margin-right: 7.8%"><b>Phone:</b><br></label>
+      <input type="text" id="phone" required>
+      <br><br>
+      <b>Gender:</b>
+          <label for="sel1" style="margin-left: 8%;"><b>Male</b>
+          <input type="radio" name="course" id="sel1" value="Male" required>
+          </label>
+          <label for="sel2"><b>Female</b>
+            <input type="radio" name="course" id="sel2" value="Female">
+          </label> 
+          <label for="sel3"><b>Other</b>
+            <input type="radio" name="course" id="sel3" value="Other">
+          </label> 
+      <br><br>
+      <b>Reason for RDIP:</b>
+          <label for="sel11" style="margin-left: 1.8%;"><b>HTML</b>
+          <input type="checkbox" name="course11" id="sel11" value="HTML">
+          </label>
+          <label for="sel12"><b>CSS</b>
+            <input type="checkbox" name="course11" id="sel12" value="CSS">
+          </label> 
+          <label for="sel13"><b>Javascript</b>
+            <input type="checkbox" name="course11" id="sel13" value="Javascript">
+          </label> 
+      <br><br>
+      <label for="college" style="margin-right: 7.8%" ><b>College:</b><br></label>
+      <input type="text" id="college" required="true">
+      <br><br>
+      <input type="checkbox" name="declare" style="margin-right: 5.4%;" required> <b>I declare above results given by me are true.</b>
+      <br><br>
+      <input type="submit" name="" style="margin-right: 9.9%"; onclick="passvalue()"> 
+      <input type="reset" name="">
+    </form> 
+</body>
+</html>
